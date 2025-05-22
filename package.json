@@ -4,11 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "css:build": "postcss src/css/style.css -o _site/css/style.css",
+    "css:watch": "postcss src/css/style.css -o _site/css/style.css --watch",
     "eleventy:build": "eleventy",
     "eleventy:watch": "eleventy --watch",
-    "build": "npm run eleventy:build",
+    "build": "npm run eleventy:build && npm run css:build",
     "serve": "eleventy --serve",
-    "dev": "eleventy --serve"
+    "dev": "npm-run-all --parallel eleventy:watch css:watch"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,11 @@
   "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-navigation": "^1.0.4"
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "autoprefixer": "^10.4.16",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.3.6"
   }
 }

@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="/css/style.css">
   {% block head %}{% endblock %}
 </head>
-<body>
-  <div class="site-container">
+<body class="min-h-screen flex flex-col bg-gray-100">
+  <div class="site-container flex flex-col flex-grow">
     {% include "partials/header.njk" %}
     
-    <main class="main-content">
-      {% block content %}
-        {{ content | safe }}
-      {% endblock %}
+    <main class="flex-grow py-8">
+      <div class="container mx-auto px-4">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </div>
     </main>
 
     {% include "partials/footer.njk" %}

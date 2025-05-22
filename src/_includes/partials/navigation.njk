@@ -1,9 +1,9 @@
-<nav class="site-navigation">
-  <ul class="nav-menu">
+<nav class="site-navigation mt-2">
+  <ul class="flex gap-4">
     {% set navPages = collections.all | eleventyNavigation %}
     {% for entry in navPages %}
       <li class="nav-item{% if entry.url == page.url %} active{% endif %}">
-        <a href="{{ entry.url }}">{{ entry.title }}</a>
+        <a href="{{ entry.url }}" class="hover:text-blue-300 transition-colors {% if entry.url == page.url %}font-bold{% endif %}">{{ entry.title }}</a>
       </li>
     {% endfor %}
   </ul>

@@ -6,7 +6,9 @@ module.exports = function(eleventyConfig) {
   
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/assets/js");
-  eleventyConfig.addPassthroughCopy("src/css");
+  
+  // We'll handle CSS processing with PostCSS/Tailwind
+  // eleventyConfig.addPassthroughCopy("src/css");
 
   // Filters
   eleventyConfig.addFilter("date", function(date, format) {
